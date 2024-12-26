@@ -1,7 +1,7 @@
 # kafka-example
 apache-kafka
 
-• Kafka için pom.xml'e eklenen dependency:
+1. Kafka için pom.xml'e eklenen dependency:
 
 <!-- Spring Kafka -->
 <dependency>
@@ -9,7 +9,7 @@ apache-kafka
     <artifactId>spring-kafka</artifactId>
 </dependency>
 
-• Kafka için projenin application.yml'a eklenmesi gerekenler:
+2. Kafka için projenin application.yml'a eklenmesi gerekenler:
 
 spring:
   application:
@@ -26,7 +26,7 @@ spring:
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
 
 
-• DOCKER:
+3. DOCKER:
 
 docker-compose.yaml Dosyası Nasıl Çalıştırılır?
 
@@ -50,11 +50,11 @@ Eğer yüklü değilse, Docker Desktop'ı indirip kurabilirsiniz. Docker Desktop
 
 
   
-• Topicteki dataları görüntülemek için:
+4. Topicteki dataları görüntülemek için:
       kafka-console-consumer --bootstrap-server localhost:9092 --topic <TOPIC_NAME> --from-beginning
 
 
-• kafka-setup file:
+5. kafka-setup file:
 örnek docker-compose.yaml:
       version: '3.8'
       services:
