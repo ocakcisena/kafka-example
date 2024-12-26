@@ -65,12 +65,6 @@ apache-kafka
 	3.3. docker-compose.yaml dosyasının bulunduğu dizinde şu komutu çalıştırın:
               
 		docker-compose up
- 
-              
-	○ Bu komut, tanımlı hizmetleri çalıştırır. Eğer terminalde loglar görmek istemiyorsanız -d (detached mode) bayrağını kullanabilirsiniz:
-  
-		docker-compose up -d
- 
 
 
 	3.4. Hizmetleri durdurmak için şu komutu kullanabilirsiniz:
