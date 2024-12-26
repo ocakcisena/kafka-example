@@ -76,4 +76,7 @@ apache-kafka
 4. Topicteki dataları görüntülemek için aşağıdaki komutu bilgisayarınızın terminaline girebilirsiniz. <TOPIC_NAME> yerine kendi topic adınızı yazmalısınız:
 
 		kafka-console-consumer --bootstrap-server localhost:9092 --topic <TOPIC_NAME> --from-beginning
-	
+
+--------------------------------------------------------------------------------------------------------------------
+
+5. Postman aracılığıyla Controller'a bir istek atarak topice data bırakabilirsiniz.
