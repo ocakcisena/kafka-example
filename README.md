@@ -1,7 +1,7 @@
 # kafka-example
 apache-kafka
 
-1. Kafka için pom.xml'e eklenen dependency:
+1. Kafka için pom.xml'e eklemeniz gereken dependency:
    
 		<dependency>
 			<groupId>org.springframework.kafka</groupId>
@@ -9,7 +9,7 @@ apache-kafka
 		</dependency>
 
 --------------------------------------------------------------------------------------------------------------------
-2. Kafka için projenin application.yml'a eklenmesi gerekenler:
+2. Kafka için projenin application.yml'a eklemeniz gerekenler:
 
 		spring:
 		  application:
@@ -85,7 +85,7 @@ apache-kafka
 
 
 --------------------------------------------------------------------------------------------------------------------
-4. Topicteki dataları görüntülemek için:
+4. Topicteki dataları görüntülemek için aşağıdaki komutu bilgisayarınızın terminaline girebilirsiniz:
 
 		kafka-console-consumer --bootstrap-server localhost:9092 --topic <TOPIC_NAME> --from-beginning
 	
