@@ -78,4 +78,4 @@
 
 --------------------------------------------------------------------------------------------------------------------
 
-5. Postman aracılığıyla Controller'a bir istek atarak topice data bırakabilirsiniz.
+5. Postman aracılığıyla Controller'a bir istek atarak topice data bırakabilirsiniz. Payload'u istediğiniz şekilde düzenleyebilirsiniz.
