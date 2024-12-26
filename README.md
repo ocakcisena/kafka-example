@@ -1,7 +1,6 @@
 # kafka-example
-apache-kafka
 
-1. Kafka için pom.xml'e eklemeniz gereken dependency:
+1. Apache Kafka için pom.xml'e eklemeniz gereken dependency:
    
 		<dependency>
 			<groupId>org.springframework.kafka</groupId>
@@ -9,7 +8,7 @@ apache-kafka
 		</dependency>
 
 --------------------------------------------------------------------------------------------------------------------
-2. Kafka için projenin application.yml'a eklemeniz gerekenler:
+2. Apache Kafka için projenin application.yml'a eklemeniz gerekenler:
 
 		spring:
 		  application:
