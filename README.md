@@ -29,33 +29,36 @@ apache-kafka
 
 docker-compose.yaml Dosyası Nasıl Çalıştırılır?
 
-	a. Docker Compose’un Yüklü Olduğundan Emin Olun İlk olarak, Docker Compose'un sisteminizde yüklü olup olmadığını kontrol edin:
+a. Docker Compose’un Yüklü Olduğundan Emin Olun İlk olarak, Docker Compose'un sisteminizde yüklü olup olmadığını kontrol edin:
 
-              docker-compose --version
+	docker-compose --version
 
 Eğer yüklü değilse, Docker Desktop'ı indirip kurabilirsiniz. Docker Desktop, Docker Compose ile birlikte gelir.
 	
-	b. docker-compose.yaml Dosyasını Oluşturun Bir metin düzenleyici kullanarak proje klasörünüzde docker-compose.yaml adında bir dosya oluşturun.
-	c. docker-compose Komutunu Kullanarak Çalıştırın docker-compose.yaml dosyasının bulunduğu dizinde şu komutu çalıştırın:
-              docker-compose up
+b. docker-compose.yaml Dosyasını Oluşturun Bir metin düzenleyici kullanarak proje klasörünüzde docker-compose.yaml adında bir dosya oluşturun.
+c. docker-compose Komutunu Kullanarak Çalıştırın docker-compose.yaml dosyasının bulunduğu dizinde şu komutu çalıştırın:
               
-		○ Bu komut, tanımlı hizmetleri çalıştırır.
-		○ Eğer terminalde loglar görmek istemiyorsanız -d (detached mode) bayrağını kullanabilirsiniz:
-              docker-compose up -d
+	docker-compose up
+ 
               
-	d. Hizmetleri Durdurun Hizmetleri durdurmak için şu komutu kullanabilirsiniz:
+○ Bu komut, tanımlı hizmetleri çalıştırır. Eğer terminalde loglar görmek istemiyorsanız -d (detached mode) bayrağını kullanabilirsiniz:
+  
+        	docker-compose up -d
+              
+d. Hizmetleri Durdurun Hizmetleri durdurmak için şu komutu kullanabilirsiniz:
+ 
               docker-compose down
-
-
 
   
 4. Topicteki dataları görüntülemek için:
-      kafka-console-consumer --bootstrap-server localhost:9092 --topic <TOPIC_NAME> --from-beginning
+
+		kafka-console-consumer --bootstrap-server localhost:9092 --topic <TOPIC_NAME> --from-beginning
 
 
 5. kafka-setup file:
    
 örnek docker-compose.yaml:
+
       version: '3.8'
       services:
 	kafka:
