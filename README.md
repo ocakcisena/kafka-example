@@ -81,7 +81,7 @@ apache-kafka
 
 	3.4. Hizmetleri Durdurun Hizmetleri durdurmak için şu komutu kullanabilirsiniz:
  
-	docker-compose down
+		docker-compose down
 
 
 --------------------------------------------------------------------------------------------------------------------
