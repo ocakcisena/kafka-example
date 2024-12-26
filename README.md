@@ -76,6 +76,12 @@
 
 		kafka-console-consumer --bootstrap-server localhost:9092 --topic <TOPIC_NAME> --from-beginning
 
---------------------------------------------------------------------------------------------------------------------
 
-5. Postman aracılığıyla Controller'a bir istek atarak topice data bırakabilirsiniz. Payload'u istediğiniz şekilde düzenleyebilirsiniz.
+--------------------------------------------------------------------------------------------------------------------
+5. Topicteki dataları silmek için ise aşağıdaki komutu kullanabilirsiniz:
+   
+		kafka-topics --bootstrap-server localhost:9092 --delete --topic <TOPIC_NAME>
+
+
+--------------------------------------------------------------------------------------------------------------------
+6. Postman aracılığıyla Controller'a bir istek atarak topice data bırakabilirsiniz. Payload'u istediğiniz şekilde düzenleyebilirsiniz.
