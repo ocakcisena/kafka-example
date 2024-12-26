@@ -2,29 +2,28 @@
 apache-kafka
 
 1. Kafka için pom.xml'e eklenen dependency:
-<!-- Spring Kafka -->
+   
 		<dependency>
 			<groupId>org.springframework.kafka</groupId>
 			<artifactId>spring-kafka</artifactId>
 		</dependency>
 
-2. Kafka için projenin application.yml'a eklenmesi gerekenler:
+3. Kafka için projenin application.yml'a eklenmesi gerekenler:
 
-spring:
-  application:
-    name: kafka-example
-  kafka:
-    producer:
-      bootstrap-servers: localhost:9092
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
-
-    consumer:
-      bootstrap-servers: localhost:9092
-      group-id: my-group
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-
+		spring:
+		  application:
+		    name: kafka-example
+		  kafka:
+		    producer:
+		      bootstrap-servers: localhost:9092
+		      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+		      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+		    consumer:
+		      bootstrap-servers: localhost:9092
+		      group-id: my-group
+		      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+		      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+	
 
 3. DOCKER:
 
