@@ -50,31 +50,31 @@ Eğer yüklü değilse, Docker Desktop'ı indirip kurabilirsiniz. Docker Desktop
 
 
   
-	• Topicteki dataları görüntülemek için:
-              kafka-console-consumer --bootstrap-server localhost:9092 --topic <TOPIC_NAME> --from-beginning
+• Topicteki dataları görüntülemek için:
+      kafka-console-consumer --bootstrap-server localhost:9092 --topic <TOPIC_NAME> --from-beginning
 
 
-	• kafka-setup file:
-       örnek docker-compose.yaml:
-              version: '3.8'
-              services:
-                kafka:
-                  image: wurstmeister/kafka
-                  environment:
-                    - KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9092  # Advertise on localhost:9092 (adjust if necessary)
-                    - KAFKA_LISTENER_SECURITY_PROTOCOL=PLAINTEXT
-                    - KAFKA_LISTENERS=PLAINTEXT://0.0.0.0:9092
-                    - KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181
-                  ports:
-                    - "9092:9092"  # Expose port 9092 for external connections
-                  networks:
-                    - kafka-net
-                zookeeper:
-                  image: wurstmeister/zookeeper
-                  ports:
-                    - "2181:2181"
-                  networks:
-                    - kafka-net
-              networks:
+• kafka-setup file:
+örnek docker-compose.yaml:
+      version: '3.8'
+      services:
+	kafka:
+	  image: wurstmeister/kafka
+	  environment:
+	    - KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9092  # Advertise on localhost:9092 (adjust if necessary)
+	    - KAFKA_LISTENER_SECURITY_PROTOCOL=PLAINTEXT
+	    - KAFKA_LISTENERS=PLAINTEXT://0.0.0.0:9092
+	    - KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181
+	  ports:
+	    - "9092:9092"  # Expose port 9092 for external connections
+	  networks:
+	    - kafka-net
+	zookeeper:
+	  image: wurstmeister/zookeeper
+	  ports:
+	    - "2181:2181"
+	  networks:
+	    - kafka-net
+      networks:
                 kafka-net:
                   driver: bridge
