@@ -1,0 +1,55 @@
+spring:
+  application:
+    name: kafka-example
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: my-group
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 3000
+        readTimeout: 30000
+        loggerLevel: basic
+  hystrix:
+    enabled: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+environment:
+  local:
+    session:
+      expire: ""
+    rabbit:
+      usage: false
+runtime:
+  platform: local
+eureka:
+  client:
+    enabled: false
+springdoc:
+  api-docs:
+    path: /actuator/api-docs
+  swagger-ui:
+    enabled: true
+server:
+  url: 'http://localhost:8087'
+  description: 'demo BE Server'
+  port: 8087
+
+kafka:
+  topicName: "test-topic"
+  groupId: "my-group"
