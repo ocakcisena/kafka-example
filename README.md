@@ -78,10 +78,14 @@
 
 
 --------------------------------------------------------------------------------------------------------------------
-5. Topicteki dataları silmek için ise aşağıdaki komutu kullanabilirsiniz:
+5. Aşağıdaki komutla topic'i silebilirsiniz, sildikten sonra yeniden create edilir.
    
 		kafka-topics --bootstrap-server localhost:9092 --delete --topic <TOPIC_NAME>
 
+6. Eğer topicteki dataların belirli bir süreden sonra kendiliğinden silinmesini istiyorsanız aşağıdaki komutu çalıştırabilirsiniz, retention time 10 saniye (10000 ms) olarak setlenmiştir, bunu dilediğiniz gibi değiştirebilirsiniz:
+
+		kafka-configs --bootstrap-server localhost:9092 --entity-type topics --entity-name test-topic --alter --add-config retention.ms=10000
+
 
 --------------------------------------------------------------------------------------------------------------------
-6. Postman aracılığıyla Controller'a bir istek atarak topice data bırakabilirsiniz. Payload'u istediğiniz şekilde düzenleyebilirsiniz.
+7. Postman aracılığıyla Controller'a bir istek atarak topice data bırakabilirsiniz. Payload'u istediğiniz şekilde düzenleyebilirsiniz.
