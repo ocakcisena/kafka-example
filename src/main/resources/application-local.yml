@@ -35,19 +35,15 @@ environment:
       expire: ""
     rabbit:
       usage: false
+      
 runtime:
   platform: local
+
 eureka:
   client:
     enabled: false
-springdoc:
-  api-docs:
-    path: /actuator/api-docs
-  swagger-ui:
-    enabled: true
+
 server:
-  url: 'http://localhost:8087'
-  description: 'demo BE Server'
   port: 8087
 
 kafka:
