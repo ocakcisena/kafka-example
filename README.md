@@ -28,9 +28,7 @@ apache-kafka
 --------------------------------------------------------------------------------------------------------------------
 3. DOCKER:
 
-	3.1. Docker Compose’un Yüklü Olduğundan Emin Olun.
-
-	İlk olarak, Docker Compose'un sisteminizde yüklü olup olmadığını kontrol edin:
+	3.1. İlk olarak, Docker Compose'un sisteminizde yüklü olup olmadığını kontrol edin:
 
 		docker-compose --version
 
@@ -38,9 +36,7 @@ apache-kafka
 
 
 
-	3.2. docker-compose.yaml Dosyasını Oluşturun. 
-
-	Bir metin düzenleyici kullanarak proje klasörünüzde (örn: kafka-setup) docker-compose.yaml adında bir dosya oluşturun:
+	3.2. Bir metin düzenleyici kullanarak proje klasörünüzde "docker-compose.yaml" adında bir dosya oluşturun:
 
 		version: '3.8'
 		services:
@@ -66,9 +62,7 @@ apache-kafka
 		    driver: bridge
 
 
-	3.3. docker-compose Komutunu Kullanarak Çalıştırın.
-
-	docker-compose.yaml dosyasının bulunduğu dizinde şu komutu çalıştırın:
+	3.3. docker-compose.yaml dosyasının bulunduğu dizinde şu komutu çalıştırın:
               
 		docker-compose up
  
