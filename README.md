@@ -28,16 +28,25 @@ apache-kafka
 --------------------------------------------------------------------------------------------------------------------
 3. DOCKER:
 
-docker-compose.yaml Dosyası Nasıl Çalıştırılır?
+3.1. Docker Compose’un Yüklü Olduğundan Emin Olun.
 
-a. Docker Compose’un Yüklü Olduğundan Emin Olun İlk olarak, Docker Compose'un sisteminizde yüklü olup olmadığını kontrol edin:
+İlk olarak, Docker Compose'un sisteminizde yüklü olup olmadığını kontrol edin:
 
 	docker-compose --version
 
 Eğer yüklü değilse, Docker Desktop'ı indirip kurabilirsiniz. Docker Desktop, Docker Compose ile birlikte gelir.
-	
-b. docker-compose.yaml Dosyasını Oluşturun Bir metin düzenleyici kullanarak proje klasörünüzde docker-compose.yaml adında bir dosya oluşturun.
-c. docker-compose Komutunu Kullanarak Çalıştırın docker-compose.yaml dosyasının bulunduğu dizinde şu komutu çalıştırın:
+
+
+
+3.2. docker-compose.yaml Dosyasını Oluşturun. 
+
+Bir metin düzenleyici kullanarak proje klasörünüzde docker-compose.yaml adında bir dosya oluşturun.
+
+
+
+3.3. docker-compose Komutunu Kullanarak Çalıştırın.
+
+docker-compose.yaml dosyasının bulunduğu dizinde şu komutu çalıştırın:
               
 	docker-compose up
  
@@ -45,8 +54,10 @@ c. docker-compose Komutunu Kullanarak Çalıştırın docker-compose.yaml dosyas
 ○ Bu komut, tanımlı hizmetleri çalıştırır. Eğer terminalde loglar görmek istemiyorsanız -d (detached mode) bayrağını kullanabilirsiniz:
   
 	docker-compose up -d
-              
-d. Hizmetleri Durdurun Hizmetleri durdurmak için şu komutu kullanabilirsiniz:
+ 
+
+
+3.4. Hizmetleri Durdurun Hizmetleri durdurmak için şu komutu kullanabilirsiniz:
  
 	docker-compose down
 
@@ -66,22 +77,20 @@ d. Hizmetleri Durdurun Hizmetleri durdurmak için şu komutu kullanabilirsiniz:
 	  kafka:
 	    image: wurstmeister/kafka
 	    environment:
-	      - KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9092  # Advertise on localhost:9092 (adjust if necessary)
+	      - KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9092  # hangi porttan ayağa kaldırdığımızı veriyoruz
 	      - KAFKA_LISTENER_SECURITY_PROTOCOL=PLAINTEXT
-	      - KAFKA_LISTENERS=PLAINTEXT://0.0.0.0:9092  # Kafka listens on all interfaces
+	      - KAFKA_LISTENERS=PLAINTEXT://0.0.0.0:9092
 	      - KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181
 	    ports:
-	      - "9092:9092"  # Expose port 9092 for external connections
+	      - "9092:9092"
 	    networks:
 	      - kafka-net
-	
 	  zookeeper:
 	    image: wurstmeister/zookeeper
 	    ports:
 	      - "2181:2181"
 	    networks:
 	      - kafka-net
-	
 	networks:
 	  kafka-net:
 	    driver: bridge
