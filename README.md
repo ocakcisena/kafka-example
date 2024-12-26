@@ -43,12 +43,12 @@ apache-kafka
 		  kafka:
 		    image: wurstmeister/kafka
 		    environment:
-		      - KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9092  # Advertise on localhost:9092 (adjust if necessary)
+		      - KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9092  # application.yaml'da bootstrap-servers'a verdiğimiz portla aynı olmalı
 		      - KAFKA_LISTENER_SECURITY_PROTOCOL=PLAINTEXT
-		      - KAFKA_LISTENERS=PLAINTEXT://0.0.0.0:9092  # Kafka listens on all interfaces
+		      - KAFKA_LISTENERS=PLAINTEXT://0.0.0.0:9092
 		      - KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181
 		    ports:
-		      - "9092:9092"  # Expose port 9092 for external connections
+		      - "9092:9092"
 		    networks:
 		      - kafka-net
 		  zookeeper:
